@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background-color: #e0e0e0;
+
+}
+a, li{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    
+
+}
+.logo-header img{
+    width: 50px;
+}
+
+header{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+
+}
+
+
+.nav-menu ul{
+    display: flex;
+    align-items: center;
+}
+.nav-menu li{
+    margin-right: 1.5rem;
+}
+.nav-menu a:hover{
+color: grey;
+}
+
+.nav-menu li:last-child{
+background-color: rgba(73, 20, 20, 0.082);
+border: 2px solid black;
+padding: 0.25rem 0.75rem;
+border-radius: 0.2rem;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2rem;
+    gap: 2rem; /* Espacio entre secciones */
+}
+
+/* Sección de productos (ya la tienes bien) */
+.products {
+    flex: 2; 
+    min-width: 600px;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.products h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: black;
+}
+
+.product-item {
+    display: flex;
+    /* Cambiamos a flex-wrap para que los elementos puedan ir abajo si no hay espacio */
+    flex-wrap: wrap; 
+    align-items: center; /* Alinea los ítems verticalmente en el centro */
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Añadimos una sombra ligera para destacar la caja */
+    transition: transform 0.3s ease;
+    /* Ajusta el ancho mínimo si quieres que sea más grande o más pequeño */
+    min-width: 300px; /* Asegura un ancho mínimo para la caja del producto */
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-item img {
+    width: 100px;
+    height: 100px;
+    margin-right: 1.5rem; /* Aumenta el margen a la derecha de la imagen */
+    border-radius: 4px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.product-item h3 {
+    margin: 0 0 0.5rem 0;
+    color: #333; /* Color más oscuro para el título */
+    flex-basis: 100%; /* El título ocupa toda la línea después de la imagen */
+    /* Si quieres que el título esté en la misma línea que la imagen, quita flex-basis: 100%; */
+}
+
+.product-item p {
+    margin: 0 0 1rem 0; /* Margen inferior para separar de los otros elementos */
+    font-size: 0.9rem;
+    color: #666;
+    padding-right: 1rem; /* Espacio a la derecha de la descripción */
+    flex-basis: 100%; /* La descripción ocupa toda la línea después del título */
+    /* Puedes ajustar el ancho máximo si la descripción es muy larga y quieres que se limite */
+    max-width: calc(100% - 115px); /* Si h3 y p están junto a la imagen, ajusta este cálculo */
+}
+
+/* El precio */
+.product-item .price {
+    font-weight: bold;
+    color: green;
+    font-size: 1.1rem; /* Un poco más grande para destacar */
+    margin-right: 2rem; /* Espacio más grande a la derecha para separarlo de la talla */
+    white-space: nowrap; /* Evita que el precio se divida en líneas */
+    flex-shrink: 0; /* Asegura que no se encoja */
+}
+
+/* Contenedor general para Talla y Cantidad */
+.product-item > div {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre "Talla" y "37", y "Cantidad" y el select */
+    white-space: nowrap; /* Evita que los labels se rompan */
+    margin-right: 1.5rem; /* Espacio a la derecha de cada bloque (Talla y Cantidad) */
+    flex-shrink: 0; /* Evita que se encojan */
+    /* Considera agregar margin-left: auto; al primer 'div' si quieres que el precio/talla/cantidad 
+       se empujen a la derecha, pero con flex-wrap es mejor controlar los márgenes entre ellos. */
+}
+
+/* Ajustes específicos para los títulos (h4) dentro de estos divs */
+.product-item h4 {
+    margin: 0; /* Elimina márgenes por defecto */
+    font-size: 0.9em; /* Tamaño de fuente para 'Talla' y 'Cantidad' */
+    color: #444;
+}
+
+/* Estilos para el valor de la talla */
+.product-item .talla {
+    padding: 5px 10px; /* Un poco más de padding */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9em;
+    background-color: #f9f9f9;
+    color: #555;
+    display: inline-block; /* Para aplicar padding y borde correctamente */
+}
+
+/* Estilos para el select de la cantidad */
+.product-item select.cantidad { /* Asegúrate de que el select también tenga la clase 'cantidad' */
+    padding: 5px 10px; /* Un poco más de padding */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9em;
+    background-color: #f9f9f9;
+    color: #555;
+    cursor: pointer;
+    min-width: 60px; /* Asegura un ancho mínimo para el select */
+}
+.remove-item-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    margin-left: auto; // Empuja el botón a la derecha
+    transition: background-color 0.3s ease;
+}
+.remove-item-button:hover {
+    background-color: #c82333;
+} 
+
+/* Estilos para la sección del carrito */
+.cart {
+    flex: 1; /* Ocupa menos espacio que productos, pero es flexible */
+    min-width: 300px; /* Ancho mínimo para que se vea bien */
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex; /* Para organizar los elementos internos verticalmente */
+    flex-direction: column;
+}
+
+.cart h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: black;
+}
+
+#cart-items {
+    flex-grow: 1; /* Esto hace que el área donde se mostrarían los ítems del carrito ocupe el espacio disponible */
+    margin-bottom: 1rem; /* Espacio antes del resumen */
+    /* border: 1px dashed #ccc;  Puedes agregar un borde para visualizar esta área */
+    min-height: 50px; /* Asegura que el área no desaparezca si está vacía */
+    display: flex; /* Para centrar el mensaje de vacío */
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-cart-message {
+    text-align: center;
+    color: #888;
+    padding: 1rem;
+    font-style: italic;
+}
+
+/* El div con clase .cart-summary que ahora envuelve todo el resumen */
+.cart-summary {
+    padding-top: 1rem; /* Espacio arriba del resumen */
+    border-top: 1px solid #eee; /* Línea separadora */
+    text-align: right; /* Alinea el texto de los totales a la derecha */
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between; /* Espacia el texto y el valor */
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.summary-line p {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Usar una fuente más legible para los detalles */
+    font-weight: normal;
+}
+
+.summary-line span {
+    font-weight: bold; /* Los valores numéricos en negrita */
+}
+
+.summary-line.total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #007bff;
+}
+
+.cart-summary hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 1rem 0;
+}
+
+#checkout-button,
+#clear-cart-button {
+    width: 100%; /* Para que los botones ocupen todo el ancho disponible */
+    margin-top: 0.5rem; /* Espacio entre los botones y el resumen */
+    margin-left: 0; /* Asegurar que no hay margen extra a la izquierda */
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    border: none; /* Asegura que no tengan borde predeterminado */
+    color: #fff; /* Color de texto blanco */
+}
+
+#checkout-button {
+    background-color: #28a745;
+}
+
+#checkout-button:hover {
+    background-color: #218838;
+}
+
+#clear-cart-button {
+    background-color: #6c757d;
+    margin-bottom: 1rem; /* Espacio debajo del último botón */
+}
+
+#clear-cart-button:hover {
+    background-color: #5a6268;
+}
+
+
+.footer{
+    background-color: white;
+    padding: 80px 0;
+}
+
+.footer-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-links{
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-links h4{
+    font-size: 20px;
+    color: black;
+    margin-bottom: 25px;
+    font-weight: 500;
+    border-bottom: 2px solid gray;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+.footer-links ul li a {
+       font-size: 18px;
+       text-decoration: none;
+       color: black;
+       display: block;
+       margin-bottom: 15px;
+       transition: all .3s ease;
+}
+
+.footer-links ul li a:hover {
+       color: gray;
+       padding-left: 6px;
+}

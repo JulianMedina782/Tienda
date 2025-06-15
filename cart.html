@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleCart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header class="header">
+<div class="logo-header">
+    <img src="images/img2.png" alt="">
+</div>
+<nav class="nav-menu">
+<ul>
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#">Productos</a></li>
+    <li><a href="#">Acerca de Nosotros</a></li>
+    <li><a href="#">Contactos</a></li>
+    <li><a href="#">Carrito</a></li>
+    <li><a href="#">Mi cuenta</a></li>
+</ul>
+</nav>
+    </header>
+    <main>
+        <section class="products">
+        <h2>Mi carrito</h2>
+        <div class="product-item">
+            <img src="images/nike90.webp" alt="Producto 1">
+            <h3>Nike Air Max 90</h3>
+            <p>Zapatilla deportiva clásica con amortiguación Air.</p> <br>
+            <span class="price">$19.99</span>
+            <div>
+                <h4>Talla</h4>
+                <span class="talla">37</span>
+            </div> 
+            
+            <div>
+                <h4 class="cantidad">Cantidad</h4>
+                <select class="cantidad" name="Cantidad" id="cantidad">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div> 
+            <div class="product-actions">
+            <button class="remove-item-button">
+                <i class="fa fa-times"></i> </button>
+            </div>    
+        </div>
+    </section>
+
+    <section class="cart">
+        <h2>Resumen del Carrito</h2> <div id="cart-items">
+            <p class="empty-cart-message">El carrito está vacío.</p>
+            </div>
+
+        <div class="cart-summary"> 
+            <div class="summary-line">
+                <p>Subtotal:</p>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="summary-line">
+                <p>Cantidad de productos:</p>
+                <span id="cart-quantity-count">0</span>
+            </div>
+            <div class="summary-line">
+                <p>Descuento:</p>
+                <span id="cart-discount">$0.00</span>
+            </div>
+            <div class="summary-line">
+                <p>Envío:</p>
+                <span id="cart-shipping">$0.00</span>
+            </div>
+            <hr> 
+            <div class="summary-line total">
+                <p>Total a pagar:</p>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button id="checkout-button">Proceder al pago</button>
+            <button id="clear-cart-button">Vaciar carrito</button>
+        </div>
+    </section>
+        
+    
+        </main>
+        
+        <footer class="footer">
+
+    <div class="container-foot">
+        <div class="footer-row">
+            <div class="footer-links">
+                <h4>Topic</h4>
+                 <ul>
+                   <li><a href="#">lorem</a></li>
+                   <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-links">
+                <h4>Topic</h4>
+                 <ul>
+                   <li><a href="#">lorem</a></li>
+                   <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-links">
+                <h4>Topic</h4>
+                 <ul>
+                   <li><a href="#">lorem</a></li>
+                   <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-links">
+               <h4>Síguenos</h4>
+               <div class="social">
+                         <a href="#" class="fa fa-facebook"></a>
+                         <a href="#" class="fa fa-twitter"></a>
+                         <a href="#" class="fa fa-instagram"></a>
+               </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+</body>
+</html>
